@@ -17,9 +17,10 @@ COPY radrodaProject .
 EXPOSE 8000
 WORKDIR /app/
 
-ENV DB_NAME="django"
-ENV DB_USER="django"
-ENV DB_PASS="123456789"
-ENV HOST_IP="172.17.0.1"
+
+ENV DB_NAME=${DB_NAME}
+ENV DB_USER=${DB_USER}
+ENV DB_PASS=${DB_PASS}
+ENV HOST_IP="localhost"
 
 CMD python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000
